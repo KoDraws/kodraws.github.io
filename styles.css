@@ -1,4 +1,14 @@
-*, *::before, *::after {
-	box-sizing: border-box;
-	font-family: Rubik;
+body {
+  overflow: hidden;
+}
+
+.banner{
+	background-image: url("images/Banner.jpg");
+	background-position: center;
+	background-size: cover;
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
 }
