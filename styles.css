@@ -1,6 +1,7 @@
 body{
 	font-family: Roboto;
 	color: #fff;
+	overflow: hidden;
 }
 
 .banner{
