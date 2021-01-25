@@ -1,3 +1,11 @@
+h1,h2,h3,h4,h5{
+	text-align: center;
+}
+
+p{
+	margin: 5px 0;
+}
+
 body{
 	font-family: Roboto;
 	color: #fff;
@@ -9,7 +17,7 @@ body{
 	background-position: center;
 	background-size: cover;
 	display: block;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 @media screen and (min-width: 800px) {
@@ -55,6 +63,17 @@ body{
 		background-image: url("images/Container.png");
 	}
 
+	.tosContainer{
+		max-width: 800px;
+		display: block;
+		align-items: left;
+		background-color: #fff;
+		color: #000;
+		margin: auto;
+		padding: 20px;
+		line
+	}
+
 	.button:hover {
 		background-color: #fff2;
 		cursor: pointer;
@@ -80,6 +99,16 @@ body{
 		padding: 0 0 50px 0;
 		transition: .5s;
 		}
+
+	.tosContainer{
+		max-width: 500px;
+		display: block;
+		align-items: left;
+		background-color: #fff;
+		color: #000;
+		margin: auto;
+		padding: 20px;
+	}
 		
 	.button {
 		width: 128px;
