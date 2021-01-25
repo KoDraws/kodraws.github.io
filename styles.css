@@ -37,14 +37,12 @@ body{
 	width: 800px;
 	margin: auto;
 	padding: 50px 100px 100px 100px;
-	opacity: 50%;
 	transition: .5s;
 }
 
 .container:hover{
 	background-color: #000f;
 	background-image: url("images/Container.png");
-	opacity: 100%;
 }
 
 .button {
