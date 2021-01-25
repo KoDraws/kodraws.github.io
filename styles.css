@@ -11,13 +11,88 @@ body{
 	height: 100vh;
 }
 
-.mainTitle{
-	font-family: East Sea Dokdo;
-	font-size: 128px;
-	text-align: center;
-	color: #fff;
-	text-shadow: 0 0 16px #0006;
-	margin: 0;
+@media screen and (min-width: 800px) {
+	.mainTitle{
+		font-family: East Sea Dokdo;
+		font-size: 128px;
+		text-align: center;
+		color: #fff;
+		text-shadow: 0 0 16px #0006;
+		margin: 0;
+	}
+
+		
+	
+	.button {
+		width: 256px;
+		height: 64px;
+		font-size: 32px;
+		color: #fff;
+		background-color: #0000;
+		border: 2px solid #fff;
+		border-radius: 6px;
+		margin: 10px;
+		box-shadow: 0 0 16px #0006;
+		text-shadow: 0 0 16px #0006;
+		transition: 0.25s;
+	}
+
+	.container{
+		max-width: 800px;
+		display: block;
+		align-items: center;
+		background-image: url("images/ContainerIdle.png");
+		background-size: cover;
+		background-color: #0002;
+		margin: auto;
+		padding: 0 0 50px 0;
+		transition: .5s;
+	}
+
+	.container:hover{
+		background-color: #000f;
+		background-image: url("images/Container.png");
+	}
+
+	.button:hover {
+		background-color: #fff2;
+		cursor: pointer;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.mainTitle{
+		font-family: East Sea Dokdo;
+		font-size: 64px;
+		text-align: center;
+		color: #fff;
+		text-shadow: 0 0 16px #0006;
+		margin: 0;
+	}
+	.container{
+		max-width: 300px;
+		display: block;
+		align-items: center;
+		background-size: cover;
+		background-color: #0006;
+		margin: auto;
+		padding: 0 0 50px 0;
+		transition: .5s;
+		}
+		
+	.button {
+		width: 128px;
+		height: 32px;
+		font-size: 16px;
+		color: #fff;
+		background-color: #0000;
+		border: 1px solid #fff;
+		border-radius: 3px;
+		margin: 5px;
+		box-shadow: 0 0 8px #0006;
+		text-shadow: 0 0 8px #0006;
+		transition: 0.25s;
+	}
 }
 
 .avatar{
@@ -27,41 +102,3 @@ body{
 	border: 3px solid #fff;
 	border-radius: 50%;
 }
-
-.container{
-	display: block;
-	align-items: center;
-	background-image: url("images/ContainerIdle.png");
-	background-size: cover;
-	background-color: #0002;
-	width: 800px;
-	margin: auto;
-	padding: 50px 100px 100px 100px;
-	transition: .5s;
-}
-
-.container:hover{
-	background-color: #000f;
-	background-image: url("images/Container.png");
-}
-
-.button {
-	width: 256px;
-	height: 64px;
-	font-size: 32px;
-	color: #fff;
-	background-color: #0000;
-	border: 2px solid #fff;
-	border-radius: 6px;
-	margin: 10px;
-	box-shadow: 0 0 16px #0006;
-	text-shadow: 0 0 16px #0006;
-	transition: 0.25s;
-}
-
-.button:hover {
-	background-color: #fff2;
-	cursor: pointer;
-}
-
-.button:active{}
