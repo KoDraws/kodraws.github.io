@@ -1,100 +1,69 @@
 body{
-	background-color: #202530;
-	font-family: Rubik;
-	margin: 0;
+	font-family: Roboto;
+	color: #fff;
 }
 
 .banner{
-	background-image: url("images/Landscape.jpg");
+	background-image: url("images/Banner.jpg");
 	background-position: center;
 	background-size: cover;
 	display: block;
 	height: 100vh;
 }
 
-* {
-  box-sizing: border-box;
+.mainTitle{
+	font-family: East Sea Dokdo;
+	font-size: 128px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 0 16px #0006;
+	margin: 0;
 }
 
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
+.avatar{
+	height: 100px;
+	width: 100px;
+	margin: 0 0 36px 0;
+	border: 3px solid #fff;
+	border-radius: 50%;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
+.container{
+	display: block;
+	align-items: center;
+	background-image: url("images/ContainerIdle.png");
+	background-size: cover;
+	background-color: #0002;
+	width: 800px;
+	margin: auto;
+	padding: 50px 100px 100px 100px;
+	opacity: 50%;
+	transition: .5s;
 }
 
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
+.container:hover{
+	background-color: #000f;
+	background-image: url("images/Container.png");
+	opacity: 100%;
 }
 
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
+.button {
+	width: 256px;
+	height: 64px;
+	font-size: 32px;
+	color: #fff;
+	background-color: #0000;
+	border: 2px solid #fff;
+	border-radius: 6px;
+	margin: 10px;
+	box-shadow: 0 0 16px #0006;
+	text-shadow: 0 0 16px #0006;
+	transition: 0.25s;
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.button:hover {
+	background-color: #fff2;
+	cursor: pointer;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
+.button:active{}
