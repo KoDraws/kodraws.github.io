@@ -1,6 +1,6 @@
 h1{
 	text-align: center;
-	font-family: Roboto;
+	font-family: Roboto Condensed;
 	font-size: 40px;
 	margin: 0;
 	padding: 50px 0 0 0;
@@ -8,7 +8,7 @@ h1{
 
 h2,h3,h4,h5{
 	text-align: center;
-	font-family: Roboto;
+	font-family: Roboto Condensed;
 }
 
 p{
@@ -17,7 +17,7 @@ p{
 }
 
 body{
-	font-family: Roboto;
+	font-family: Roboto Condensed;
 	color: #fff;
 	overflow: hidden;
 }
@@ -34,7 +34,7 @@ body{
 	
 	h1{
 		text-align: center;
-		font-family: Roboto;
+		font-family: Roboto Condensed;
 		font-size: 75px;
 		padding: 50px;
 		margin: 0;
