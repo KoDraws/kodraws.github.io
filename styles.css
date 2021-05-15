@@ -1,9 +1,19 @@
-h1,h2,h3,h4,h5{
+h1{
 	text-align: center;
+	font-family: Roboto;
+	font-size: 40px;
+	margin: 0;
+	padding: 50px 0 0 0;
+}
+
+h2,h3,h4,h5{
+	text-align: center;
+	font-family: Roboto;
 }
 
 p{
 	margin: 5px 0;
+	text-align: left;
 }
 
 body{
@@ -21,6 +31,16 @@ body{
 }
 
 @media screen and (min-width: 800px) {
+	
+	h1{
+		text-align: center;
+		font-family: Roboto;
+		font-size: 75px;
+		padding: 50px;
+		margin: 0;
+		padding: 50px 0 0 0;
+	}
+	
 	.mainTitle{
 		font-family: East Sea Dokdo;
 		font-size: 128px;
@@ -29,8 +49,6 @@ body{
 		text-shadow: 0 0 16px #0006;
 		margin: 0;
 	}
-
-		
 	
 	.button {
 		width: 256px;
@@ -50,6 +68,15 @@ body{
 		max-width: 800px;
 		display: block;
 		align-items: center;
+		margin: auto;
+		padding: 10px 0 10px 0;
+		background-color: #0000;
+	}
+
+	.titleContainer{
+		max-width: 800px;
+		display: block;
+		align-items: center;
 		background-image: url("images/ContainerIdle.png");
 		background-size: cover;
 		background-color: #0002;
@@ -58,7 +85,7 @@ body{
 		transition: .5s;
 	}
 
-	.container:hover{
+	.titleContainer:hover{
 		background-color: #000f;
 		background-image: url("images/Container.png");
 	}
@@ -89,7 +116,7 @@ body{
 		text-shadow: 0 0 16px #0006;
 		margin: 0;
 	}
-	.container{
+	.titleContainer{
 		max-width: 300px;
 		display: block;
 		align-items: center;
@@ -108,6 +135,15 @@ body{
 		color: #000;
 		margin: auto;
 		padding: 20px;
+	}
+	
+	.container{
+		max-width: 800px;
+		display: block;
+		align-items: center;
+		margin: auto;
+		padding: 10px 0 10px 0;
+		background-color: #0000;
 	}
 		
 	.button {
