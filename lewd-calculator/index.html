@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<title>KoDraws.Art</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../favicon.png" sizes="16x16 32x32" type="image/png">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body style="background-color: #000; color: #fff; margin: 40px; line-height: 25px;" onload="update()">
+	<div style="background-color: #101214; padding: 30px;">
+		<h3 style="text-align: center;">Input</h3>
+		<b>Penis</b><br>
+		Length: <input type="text" id="pLength" name="pLength" value="6" onchange="update()" style="width: 80px;"> inches<br>
+		Size Ratio: 1 to <input type="text" id="pRatio" name="pDiameter" value="4" onchange="update()" style="width: 30px;"><br>
+		Flaccid/Erect Ratio: <input type="text" id="pErectionRatio" name="pErectionRatio" value="0.7" onchange="update()" style="width: 80px;"><br>
+		<br>		
+		<b>Testicles</b><br>
+		Diameter (each): <input type="text" id="tDiameter" name="tDiameter" value="1" onchange="update()" style="width: 80px;"> inches<br>
+		Cum Multiplier: <input type="text" id="cMult" name="cMult" value="1" onchange="update()" style="width: 80px;"><br>
+		<br>
+		<b>Time Since Last Orgasm</b><br>
+		<input type="text" id="oDays" name="oDays" value="1" onchange="update()" style="width: 30px;"> Days<br>
+		<input type="text" id="oHours" name="oHours" value="0" onchange="update()" style="width: 30px;"> Hours<br>
+		<input type="text" id="oMins" name="oMins" value="0" onchange="update()" style="width: 30px;"> Minutes<br>
+		<input type="text" id="oSecs" name="oSecs" value="0" onchange="update()" style="width: 30px;"> Seconds<br>
+	</div><br>
+
+	<div style="background-color: #101214; padding: 30px;">
+		<h3 style="text-align: center;">Output</h3>
+		<b>Penis</b><br>
+		Flaccid: <text id="pFlaccidSize"></text><br>
+		Erect: <text id="pErectSize"></text><br>
+		<br>
+		<b>Testicles</b><br>
+		Diameter (each): <text id="tDiameterRes"></text><br>
+		Weight (combined): <text id="tWeightRes"></text><br>
+		Stored Cum: <text id="cStoredRes"></text><br>
+		Cum Production: <text id="cProdRes"></text><br>
+	</div>
+	
+<script>
+function update()
+{
+	let cProdAmount = Math.pow(cMult.value,2) * (Math.PI * 4/3 * Math.pow((tDiameter.value/2),3) / 61.024 * 2.205 * 2 * 80 * cMult.value);
+	let cumStorageCapacity = cMult.value * (Math.PI * 4/3 * Math.pow((tDiameter.value/2),3) / 61.024 * 800);
+	let cumAmount = cProdAmount * oDays.value + cProdAmount * oHours.value / 24 + cProdAmount * oMins.value / 24 / 60 + cProdAmount * oSecs.value / 24 / 60 / 60;
+	let penisFlaccidWeight = pErectionRatio.value * (Math.PI * Math.pow((pLength.value / pRatio.value /2),2) * pLength.value / 61.024 * 2.205)
+	let penisErectWeight = Math.PI * Math.pow((pLength.value / pRatio.value/2),2) * pLength.value / 61.024 * 2.205
+
+	document.getElementById("pFlaccidSize").innerHTML = Math.round(pLength.value * pErectionRatio.value) + '" x ' + Math.round(pLength.value / pRatio.value * pErectionRatio.value) + '", ' + Math.round(penisFlaccidWeight) + " lbs";
+	document.getElementById("pErectSize").innerHTML = Math.round(pLength.value) + '" x ' + Math.round(pLength.value / pRatio.value) + '", ' + Math.round(penisErectWeight) + " lbs";
+	
+	document.getElementById("tDiameterRes").innerHTML = tDiameter.value + " inches";
+	document.getElementById("tWeightRes").innerHTML = Math.round(Math.PI * 4/3 * Math.pow((pLength.value / pRatio.value/2),3) / 61.024 * 2.205 * 2) + " lbs";
+	
+	if (cProdAmount < 1000) document.getElementById("cProdRes").innerHTML = Math.round(cProdAmount) + "mL / day";
+	else if (cProdAmount < 1000 * 24) document.getElementById("cProdRes").innerHTML = Math.round(cProdAmount / 1000) + "L / day";
+	else if (cProdAmount < 1000 * 24 * 60) document.getElementById("cProdRes").innerHTML = Math.round(cProdAmount / 1000 / 24) + "L / hour";
+	else if (cProdAmount < 1000 * 24 * 60 * 60) document.getElementById("cProdRes").innerHTML = Math.round(cProdAmount / 1000 / 24 / 60) + "L / minute";
+	else document.getElementById("cProdRes").innerHTML = Math.round(cProdAmount / 1000 / 24 / 60 / 60) + " L / second";
+	
+	
+	if (cumAmount < 1000)
+	{
+		document.getElementById("cStoredRes").innerHTML = Math.round(cumAmount) + "mL";
+	}
+	else
+	{
+		document.getElementById("cStoredRes").innerHTML = Math.round(cumAmount / 1000) + "L";
+	}
+	
+	if (cumStorageCapacity < 1000)
+	{
+		document.getElementById("cStoredRes").innerHTML += " / " + Math.round(cumStorageCapacity) + "mL";
+	}
+	else
+	{
+		document.getElementById("cStoredRes").innerHTML += " / " + Math.round(cumStorageCapacity / 1000) + "L";
+	}
+}
+</script>
+</body>
+</html>
