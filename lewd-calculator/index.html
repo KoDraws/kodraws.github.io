@@ -53,7 +53,7 @@ function update()
 	let testicleDiameter;
 	
 	if (cumAmount < cumStorageCapacity) testicleDiameter = tDiameter.value;
-	else testicleDiameter = 2 * Math.pow((3 * (cumAmount / 16.387)) / (4 * Math.PI), 1 / 3);
+	else testicleDiameter = 2 * Math.pow((3 * (cumAmount / cMult.value / 16.387)) / (4 * Math.PI), 1 / 3);
 
 	document.getElementById("pFlaccidSize").innerHTML = Math.round(pLength.value * pErectionRatio.value) + '" x ' + Math.round(pLength.value / pRatio.value * pErectionRatio.value) + '", ' + Math.round(penisFlaccidWeight) + " lbs";
 	document.getElementById("pErectSize").innerHTML = Math.round(pLength.value) + '" x ' + Math.round(pLength.value / pRatio.value) + '", ' + Math.round(penisErectWeight) + " lbs";
