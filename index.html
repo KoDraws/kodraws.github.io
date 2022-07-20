@@ -15,71 +15,15 @@
 		<div class="titleContainer">
 			<div class="mainTitle">KoDraws.Art</div>
 			<img class="avatar" src="images/Avatar.gif" alt="Ko"></img><br>
-			<button class="button" onclick=" window.open('https://twitter.com/KoDrawsStuff','_blank')">Twitter</button>
-			<button class="button" onclick=" window.open('https://www.furaffinity.net/user/kodraws/','_blank')">Fur Affinity</button>
-			<button class="button" onclick=" window.open('https://discord.gg/wQnxbT2vWd','_blank')">Discord</button>
-			<button class="button" onclick="location.href='#commissions'">Commissions</button>
-		</div>
-	</div>
-	
-	<!--CommissionOpen-->
-	<div id="commissionSectionOpen">
-		<div style="background-color: #101214; min-height: 100vh;" id="commissions">
-			<div class="container" style="background-color: #0000; padding: 0 10px 0 10px">
-				<h1>Commissions</h1>
-				<p style="color: #0f0; font-size: 50px; text-align: center;">OPEN</p>
-				<p style="color: #0cf; font-size: 20px; text-align: center">Looking to commission me?</p>
-				<p style="font-size: 15px; text-align: center; margin-bottom: 20px;">Here's some information on how my commissions work:</p>
-				<ul style="margin: 0">
-					<li>I will pick from the available commission requests depending on what is most suitable toward my personal desires and my desired audience.</li>
-					<li>If you're looking to commission me for explicit artwork, you must be 18 or older. Additionally, I will not draw extreme fat, muscle, hyper, or macro, filth (stench, grime, or toilet play), sexualized minors or those who appear to be minors, zoophilia (fully sapient ferals are fine), sexualized voilence or gore, or rape/nonconcensual sex.</li>
-					<li>Finally, please be sure to read my <a style="color: #adf;" href="./terms-and-conditions/index.html" target="_blank">Terms and Conditions</a>
-				</ul>
-			</div>
-			<div class="container" style="text-align: center;">
-				<button class="button" onclick="window.open('https://trello.com/b/2gWIqYiB/','_blank')">Queue</button>
-			</div>
-			<div class="container" style="background-color: #0000; padding: 0 20px 0 20px">
-				<p style="text-align: center;">Want an instant price estimate? Fill in the form down to the "Estimated Price" point. No need to submit!</p>
-			</div>
-			<hr>
-			<h2>Stream Commissions Form</h2>
-			<div class="container" style="padding-bottom: 50px; border: 2px;">
-				<script src="https://www.cognitoforms.com/f/seamless.js" data-key="h4-8DBqN6UC7Zx7eg8UMYg" data-form="6"></script>
-			</div>
-		</div>
-	</div>
-	
-	<!--CommissionClosed-->
-	<div id="commissionSectionClosed">
-		<div style="background-color: #101214; min-height: 100vh;" id="commissions">
-			<div class="container" style="background-color: #0000; padding: 0 10px 0 10px">
-				<h1>Commissions</h1>
-				<p style="color: #f00; font-size: 50px; text-align: center;">CLOSED</p>
-				<p style="font-size: 20px;">My commissions are currently closed, but feel free to take a look at my queue with the button below!</p>
-			</div>
-			<div class="container" style="text-align: center;">
-				<button class="button" onclick="window.open('https://trello.com/b/2gWIqYiB/','_blank')">Queue</button>
+			<div style="padding: 50px;">
+				<button class="button" onclick=" window.open('https://twitter.com/KoDrawsStuff','_blank')">Twitter</button>
+				<button class="button" onclick=" window.open('https://www.furaffinity.net/user/kodraws/','_blank')">Fur Affinity</button>
 			</div>
 		</div>
 	</div>
 	
 <script>
-
-	var commissionsOpen = 0;
-	var commissionSectionOpen = document.getElementById("commissionSectionOpen");
-	var commissionSectionClosed = document.getElementById("commissionSectionClosed");
-	
-	if (commissionsOpen) {
-		commissionSectionOpen.style.display = "block";
-		commissionSectionClosed.style.display = "none";
-	}
-	else {
-		commissionSectionOpen.style.display = "none";
-		commissionSectionClosed.style.display = "block";
-	}
 	console.log("Hello, F12 user! >:3c");
-	
 </script>
 	
 </body>
