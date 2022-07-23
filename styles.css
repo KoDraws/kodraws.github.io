@@ -105,6 +105,11 @@ body{
 		background-color: #fff2;
 		cursor: pointer;
 	}
+	
+	.logoButton{
+		margin: auto 40px;
+		vertical-align: centered;
+	}
 }
 
 @media screen and (max-width: 800px) {
@@ -158,6 +163,11 @@ body{
 		box-shadow: 0 0 8px #0006;
 		text-shadow: 0 0 8px #0006;
 		transition: 0.25s;
+	}
+	
+	.logoButton{
+		margin: auto 10px;
+		vertical-align: centered;
 	}
 }
 
