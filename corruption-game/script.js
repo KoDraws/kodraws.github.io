@@ -45,7 +45,8 @@ const character = {
 };
 
 let player = character;
-let activeStats = { health: 0, strength: 0, dexterity: 0, willpower: 0, wisdom: 0, charisma: 0, libido: 0, lust: 0 }
+let activeStats = {
+    health: 0, maxHealth: 0, strength: 0, dexterity: 0, willpower: 0, wisdom: 0, charisma: 0, libido: 0, lust: 0, lustMax: 100, penisSize: 0, ballsSize: 0 }
 
 function onLoad() {
     content = document.getElementById("content");
@@ -98,7 +99,7 @@ function buttonClick(button) {
             dataScreen = false;
             setScene;
         }
-        else if (button == b) {
+        else if (button == b || button == data) {
             dataScreen = false;
             setScene;
         }
@@ -109,7 +110,54 @@ function buttonClick(button) {
         else if (button == 2) {
             saveObject = JSON.parse(localStorage.getItem('save1'));
             console.log(saveObject);
+            scene = saveObject.scene;
+            player = saveObject.player;
             setScene();
+        }
+        else if (button == 3) {
+            localStorage.removeItem('save1');
+        }
+        else if (button == q) {
+            saveObject = { player, scene };
+            localStorage.setItem('save2', JSON.stringify(saveObject));
+        }
+        else if (button == w) {
+            saveObject = JSON.parse(localStorage.getItem('save2'));
+            console.log(saveObject);
+            scene = saveObject.scene;
+            player = saveObject.player;
+            setScene();
+        }
+        else if (button == e) {
+            localStorage.removeItem('save2');
+        }
+        else if (button == a) {
+            saveObject = { player, scene };
+            localStorage.setItem('save3', JSON.stringify(saveObject));
+        }
+        else if (button == s) {
+            saveObject = JSON.parse(localStorage.getItem('save3'));
+            console.log(saveObject);
+            scene = saveObject.scene;
+            player = saveObject.player;
+            setScene();
+        }
+        else if (button == d) {
+            localStorage.removeItem('save3');
+        }
+        else if (button == z) {
+            saveObject = { player, scene };
+            localStorage.setItem('save4', JSON.stringify(saveObject));
+        }
+        else if (button == x) {
+            saveObject = JSON.parse(localStorage.getItem('save4'));
+            console.log(saveObject);
+            scene = saveObject.scene;
+            player = saveObject.player;
+            setScene();
+        }
+        else if (button == c) {
+            localStorage.removeItem('save4');
         }
     }
 
@@ -147,8 +195,8 @@ function buttonClick(button) {
             let error = document.getElementById("error");
             if (input.value >= 48 && input.value <= 84) {
                 scene = "eyeColorSelect";
-                player.height = input.value;
-                console.log("Player Height: " + Math.floor(player.height / 12) + "'" + player.height % 12 + "\"");
+                player.body.height = input.value;
+                console.log("Player Height: " + Math.floor(player.body.height / 12) + "'" + player.body.height % 12 + "\"");
                 setScene();
             }
             else error = "Height must be from 48\"(4'0\") to 84\"(7'0\")";
@@ -382,25 +430,25 @@ function buttonClick(button) {
     else if (scene == "penisSizeSelect") {
         if (button == 1) {
             player.penis.size = 4;
-            console.log("Penis Size: " + player.penis.length + "\"");
+            console.log("Penis Size: " + player.penis.size + "\"");
             scene = "ballSizeSelect";
             setScene();
         }
         else if (button == 2) {
             player.penis.size = 6;
-            console.log("Penis Size: " + player.penis.length + "\"");
+            console.log("Penis Size: " + player.penis.size + "\"");
             scene = "ballSizeSelect";
             setScene();
         }
         else if (button == 3) {
             player.penis.size = 8;
-            console.log("Penis Size: " + player.penis.length + "\"");
+            console.log("Penis Size: " + player.penis.size + "\"");
             scene = "ballSizeSelect";
             setScene();
         }
         else if (button == 4) {
             player.penis.size = 10;
-            console.log("Penis Size: " + player.penis.length + "\"");
+            console.log("Penis Size: " + player.penis.size + "\"");
             scene = "ballSizeSelect";
             setScene();
         }
@@ -445,7 +493,7 @@ function buttonClick(button) {
             player.traits.bulgy = false;
             player.traits.messy = false;
             player.traits.libidinous = false;
-            player.penis.lengthMod = 1.5;
+            player.penis.sizeMod = 1.5;
             player.balls.sizeMod = 1;
             player.balls.efficiencyMod = 1;
             player.statsMult.libido = 1;
@@ -458,7 +506,7 @@ function buttonClick(button) {
             player.traits.bulgy = true;
             player.traits.messy = false;
             player.traits.libidinous = false;
-            player.penis.lengthMod = 1;
+            player.penis.sizeMod = 1;
             player.balls.sizeMod = 1.5;
             player.balls.efficiencyMod = 1;
             player.statsMult.libido = 1;
@@ -471,7 +519,7 @@ function buttonClick(button) {
             player.traits.bulgy = false;
             player.traits.messy = true;
             player.traits.libidinous = false;
-            player.penis.lengthMod = 1;
+            player.penis.sizeMod = 1;
             player.balls.sizeMod = 1;
             player.balls.efficiencyMod = 2;
             player.statsMult.libido = 1;
@@ -484,7 +532,7 @@ function buttonClick(button) {
             player.traits.bulgy = false;
             player.traits.messy = false;
             player.traits.libidinous = true;
-            player.penis.lengthMod = 1;
+            player.penis.sizeMod = 1;
             player.balls.sizeMod = 1;
             player.balls.efficiencyMod = 1;
             player.statsMult.libido = 2;
@@ -678,7 +726,7 @@ function setScene() {
 
         content.innerHTML += "<p>Confirm character choices. You will not be able to edit them beyond this point.</p>";
         content.innerHTML += "<p>Name: " + player.name + "</p>";
-        content.innerHTML += "<p>Height: " + Math.floor(player.height / 12) + "'" + player.height % 12 + "\"</p>";
+        content.innerHTML += "<p>Height: " + Math.floor(player.body.height / 12) + "'" + player.body.height % 12 + "\"</p>";
         content.innerHTML += "<p>Eye Color: " + player.eyes.color + "</p>"
         content.innerHTML += "<p>Hair Length: " + player.hair.length + "</p>"
         content.innerHTML += "<p>Hair Color: " + player.hair.color + "</p>"
@@ -689,8 +737,8 @@ function setScene() {
         if (player.statsMult.charisma > 1) content.innerHTML += "<p>Stat Boost: Charisma</p>"
         content.innerHTML += "<p>Muscle: " + player.body.muscle + " / 100</p>"
         content.innerHTML += "<p>Fat: " + player.body.fat + " / 100</p>"
-        content.innerHTML += "<p>Penis: " + player.penis.size + "\"</p>"
-        content.innerHTML += "<p>Balls: " + player.balls.size + "\" wide, each</p>"
+        content.innerHTML += "<p>Penis: " + activeStats.penisSize + "\"</p>"
+        content.innerHTML += "<p>Balls: " + activeStats.ballsSize + "\" wide, each</p>"
         if (player.traits.hung) content.innerHTML += "<p>Sexual Trait: Hung</p>"
         if (player.traits.bulgy) content.innerHTML += "<p>Sexual Trait: Bulgy</p>"
         if (player.traits.messy) content.innerHTML += "<p>Sexual Trait: Messy</p>"
@@ -705,48 +753,80 @@ function setScene() {
     else if (scene == "beginning") {
         clearAll();
         activeStatsCalc();
-        info.innerHTML += "<p>Health: " + Math.floor(activeStats.health) + "</p>";
+        activeStats.health = activeStats.maxHealth;
+        activeStats.lust = activeStats.lustMax;
+        info.innerHTML += "<p>HP: " + Math.floor(activeStats.health) + " / " + Math.floor(activeStats.maxHealth) + "</p>";
+        info.innerHTML += "<p>STR: " + Math.floor(activeStats.strength) + "</p>";
+        info.innerHTML += "<p>DEX: " + Math.floor(activeStats.dexterity) + "</p>";
+        info.innerHTML += "<p>WIL: " + Math.floor(activeStats.willpower) + "</p>";
+        info.innerHTML += "<p>WIS: " + Math.floor(activeStats.wisdom) + "</p>";
+        info.innerHTML += "<p>CHR: " + Math.floor(activeStats.charisma) + "</p>";
+        info.innerHTML += "<p>LIB: " + Math.floor(activeStats.libido) + "</p>";
+        info.innerHTML += "<p>LST: " + Math.floor(activeStats.lust) + " / " + Math.floor(activeStats.lustMax) + "</p>";
     }
 }
 
 function openDataScreen() {
     clearAll();
+
+    if ("Save1" in localStorage) {
+        button2.disabled = false;
+        button3.disabled = false;
+    }
+    if ("Save2" in localStorage) {
+        dataTest = localStorage.getItem("Save2");
+        buttonW.disabled = false;
+        buttonE.disabled = false;
+    }
+    if ("Save3" in localStorage) {
+        dataTest = localStorage.getItem("Save3");
+        buttonS.disabled = false;
+        buttonD.disabled = false;
+    }
+    if ("Save4" in localStorage) {
+        dataTest = localStorage.getItem("Save4");
+        buttonX.disabled = false;
+        buttonC.disabled = false;
+    }
+
+    if (scene != "mainMenu") {
+        button1.disabled = false;
+        buttonQ.disabled = false;
+        buttonA.disabled = false;
+        buttonZ.disabled = false;
+    }
+
     button1.innerHTML = "Save 1";
-    button1.disabled = false;
     button2.innerHTML = "Load 1";
-    button2.disabled = false;
     button3.innerHTML = "Delete 1";
-    button3.disabled = false;
     buttonQ.innerHTML = "Save 2";
-    //buttonQ.disabled = false;
     buttonW.innerHTML = "Load 2";
-    //buttonW.disabled = false;
     buttonE.innerHTML = "Delete 2";
-    //buttonE.disabled = false;
     buttonA.innerHTML = "Save 3";
-    //buttonA.disabled = false;
     buttonS.innerHTML = "Load 3";
-    //buttonS.disabled = false;
     buttonD.innerHTML = "Delete 3";
-    //buttonD.disabled = false;
     buttonZ.innerHTML = "Save 4";
-    //buttonZ.disabled = false;
     buttonX.innerHTML = "Load 4";
-    //buttonX.disabled = false;
     buttonC.innerHTML = "Delete 4";
-    //buttonC.disabled = false;
     buttonB.innerHTML = "Back";
     buttonB.disabled = false;
 
 }
 
 function activeStatsCalc() {
-    activeStats.health = player.health + (player.health * (50 - player.body.fat) / 10)
+    activeStats.maxHealth = player.stats.health + (player.body.fat - 30) / 10 + (player.body.muscle - 30) / 10 + (player.body.height - 60);
+    activeStats.penisSize = player.penis.size * player.penis.sizeMult;
+    activeStats.ballsSize = player.balls.size * player.balls.sizeMult;
+    activeStats.strength = player.stats.strength * player.statsMult.strength + (player.body.fat - 30) / 8 + (player.body.muscle - 30) / 8 + (player.body.height - 60) / 5;
+    activeStats.dexterity = player.stats.dexterity * player.statsMult.dexterity - (player.body.fat - 30) / 8 - (player.body.muscle - 30) / 8 - (player.body.height - 60) / 5;
+    activeStats.willpower = player.stats.willpower * player.statsMult.willpower;
+    activeStats.wisdom = player.stats.wisdom * player.statsMult.wisdom;
+    activeStats.charisma = player.stats.charisma * player.statsMult.charisma;
+    activeStats.libido = player.stats.libido * player.statsMult.libido;
 }
 
 document.addEventListener("keydown", e => {
     if (scene != "nameSelect" && scene != "heightSelect") {
-        console.log(e.key)
         buttonClick(e.key);
     }
 });
