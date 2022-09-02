@@ -1,4 +1,5 @@
 let content;
+let info;
 let button1;
 let button2;
 let button3;
@@ -19,7 +20,12 @@ let buttonX;
 let buttonC;
 let buttonV;
 let buttonB;
+let buttonData;
 let scene;
+let time;
+let dataScreen;
+let saveObject;
+
 const character = {
     name: "",
     stats: { health: 100, strength: 10, dexterity: 10, willpower: 10, wisdom: 10, charisma: 10, libido: 10, lust: 0 },
@@ -39,9 +45,11 @@ const character = {
 };
 
 let player = character;
+let activeStats = { health: 0, strength: 0, dexterity: 0, willpower: 0, wisdom: 0, charisma: 0, libido: 0, lust: 0 }
 
 function onLoad() {
     content = document.getElementById("content");
+    info = document.getElementById("info");
     scene = "mainMenu";
     clearAll();
     setScene();
@@ -68,6 +76,7 @@ function clearAll() {
     buttonC = document.getElementById("c")
     buttonV = document.getElementById("v")
     buttonB = document.getElementById("b")
+    buttonData = document.getElementById("data")
     const controlButtons = [button1, button2, button3, button4, button5, buttonQ, buttonW, buttonE, buttonR, buttonT, buttonA, buttonS, buttonD, buttonF, buttonG, buttonZ, buttonX, buttonC, buttonV, buttonB];
     let i;
     for (i = 0; i < controlButtons.length; i++) {
@@ -75,13 +84,44 @@ function clearAll() {
         controlButtons[i].disabled = true;
     }
     content.innerHTML = "";
+    info.innerHTML = "";
 }
 
 function buttonClick(button) {
-    if (scene == "mainMenu") {
+    //Data Screen Override
+    if (button == data && !dataScreen) {
+        dataScreen = true;
+        openDataScreen();
+    }
+    else if (dataScreen) {
+        if (button == data) {
+            dataScreen = false;
+            setScene;
+        }
+        else if (button == b) {
+            dataScreen = false;
+            setScene;
+        }
+        else if (button == 1) {
+            saveObject = { player, scene };
+            localStorage.setItem('save1', JSON.stringify(saveObject));
+        }
+        else if (button == 2) {
+            saveObject = JSON.parse(localStorage.getItem('save1'));
+            console.log(saveObject);
+            setScene();
+        }
+    }
+
+    //New Game
+    else if (scene == "mainMenu") {
         if (button == 1) {
             scene = "nameSelect";
             setScene();
+        }
+        if (button == 2) {
+            dataScreen = true;
+            openDataScreen();
         }
     }
     else if (scene == "nameSelect") {
@@ -470,13 +510,15 @@ function buttonClick(button) {
 }
 
 function setScene() {
+    //New Game
     if (scene == "mainMenu") {
         clearAll();
         content.innerHTML = "<p>Main Menu</p>";
         button1.disabled = false;
         button1.innerHTML = "New Game";
-        //button2.disabled = false;
+        button2.disabled = false;
         button2.innerHTML = "Load Game";
+        buttonData.disabled = false;
     }
     else if (scene == "nameSelect") {
         clearAll();
@@ -489,6 +531,7 @@ function setScene() {
         buttonB.innerHTML = "Back";
         document.getElementById("input").focus();
         document.getElementById("input").value = player.name;
+        buttonData.disabled = true;
     }
     else if (scene == "heightSelect") {
         clearAll();
@@ -658,6 +701,47 @@ function setScene() {
         buttonB.innerHTML = "Back";
         buttonB.disabled = false;
     }
+
+    else if (scene == "beginning") {
+        clearAll();
+        activeStatsCalc();
+        info.innerHTML += "<p>Health: " + Math.floor(activeStats.health) + "</p>";
+    }
+}
+
+function openDataScreen() {
+    clearAll();
+    button1.innerHTML = "Save 1";
+    button1.disabled = false;
+    button2.innerHTML = "Load 1";
+    button2.disabled = false;
+    button3.innerHTML = "Delete 1";
+    button3.disabled = false;
+    buttonQ.innerHTML = "Save 2";
+    //buttonQ.disabled = false;
+    buttonW.innerHTML = "Load 2";
+    //buttonW.disabled = false;
+    buttonE.innerHTML = "Delete 2";
+    //buttonE.disabled = false;
+    buttonA.innerHTML = "Save 3";
+    //buttonA.disabled = false;
+    buttonS.innerHTML = "Load 3";
+    //buttonS.disabled = false;
+    buttonD.innerHTML = "Delete 3";
+    //buttonD.disabled = false;
+    buttonZ.innerHTML = "Save 4";
+    //buttonZ.disabled = false;
+    buttonX.innerHTML = "Load 4";
+    //buttonX.disabled = false;
+    buttonC.innerHTML = "Delete 4";
+    //buttonC.disabled = false;
+    buttonB.innerHTML = "Back";
+    buttonB.disabled = false;
+
+}
+
+function activeStatsCalc() {
+    activeStats.health = player.health + (player.health * (50 - player.body.fat) / 10)
 }
 
 document.addEventListener("keydown", e => {
