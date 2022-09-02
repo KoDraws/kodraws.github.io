@@ -28,6 +28,7 @@ let saveObject;
 
 const character = {
     name: "",
+    location: (null, 0, 0),
     stats: { health: 100, strength: 10, dexterity: 10, willpower: 10, wisdom: 10, charisma: 10, libido: 10, lust: 0 },
     statsMult: { strength: 1, dexterity: 1, willpower: 1, wisdom: 1, charisma: 1, libido: 1, lust: 1 },
     traits: { hung: false, bulgy: false, messy: false, libidinous: false },
@@ -568,6 +569,15 @@ function buttonClick(button) {
             setScene();
         }
     }
+
+    //Intro
+    else if (scene == "beginning") {
+        if (button == 1) {
+            activeStats.lust /= 2;
+            player.location = (null, 0, 0);
+            scene = 
+        }
+    }
 }
 
 function setScene() {
@@ -768,15 +778,24 @@ function setScene() {
         activeStatsCalc();
         activeStats.health = activeStats.maxHealth;
         activeStats.lust = activeStats.lustMax;
-        info.innerHTML += "<p>HP: " + Math.floor(activeStats.health) + " / " + Math.floor(activeStats.maxHealth) + "</p>";
-        info.innerHTML += "<p>STR: " + Math.floor(activeStats.strength) + "</p>";
-        info.innerHTML += "<p>DEX: " + Math.floor(activeStats.dexterity) + "</p>";
-        info.innerHTML += "<p>WIL: " + Math.floor(activeStats.willpower) + "</p>";
-        info.innerHTML += "<p>WIS: " + Math.floor(activeStats.wisdom) + "</p>";
-        info.innerHTML += "<p>CHR: " + Math.floor(activeStats.charisma) + "</p>";
-        info.innerHTML += "<p>LIB: " + Math.floor(activeStats.libido) + "</p>";
-        info.innerHTML += "<p>LST: " + Math.floor(activeStats.lust) + " / " + Math.floor(activeStats.lustMax) + "</p>";
+        statsPopulate();
+
+        buttonData.disabled = false;
+        contentUpdate("beginning");
+        button1.innerHTML = "Next";
+        button1.disabled = false;
     }
+}
+
+function statsPopulate() {
+    info.innerHTML += "<p>HP: " + Math.floor(activeStats.health) + " / " + Math.floor(activeStats.maxHealth) + "</p>";
+    info.innerHTML += "<p>STR: " + Math.floor(activeStats.strength) + "</p>";
+    info.innerHTML += "<p>DEX: " + Math.floor(activeStats.dexterity) + "</p>";
+    info.innerHTML += "<p>WIL: " + Math.floor(activeStats.willpower) + "</p>";
+    info.innerHTML += "<p>WIS: " + Math.floor(activeStats.wisdom) + "</p>";
+    info.innerHTML += "<p>CHR: " + Math.floor(activeStats.charisma) + "</p>";
+    info.innerHTML += "<p>LIB: " + Math.floor(activeStats.libido) + "</p>";
+    info.innerHTML += "<p>LST: " + Math.floor(activeStats.lust) + " / " + Math.floor(activeStats.lustMax) + "</p>";
 }
 
 function openDataScreen() {
