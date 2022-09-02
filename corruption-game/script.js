@@ -97,67 +97,80 @@ function buttonClick(button) {
     else if (dataScreen) {
         if (button == data) {
             dataScreen = false;
-            setScene;
+            setScene();
         }
         else if (button == b || button == data) {
+            console.log("test");
             dataScreen = false;
-            setScene;
+            setScene();
         }
         else if (button == 1) {
             saveObject = { player, scene };
             localStorage.setItem('save1', JSON.stringify(saveObject));
+            openDataScreen();
         }
         else if (button == 2) {
             saveObject = JSON.parse(localStorage.getItem('save1'));
             console.log(saveObject);
             scene = saveObject.scene;
             player = saveObject.player;
+            dataScreen = false;
             setScene();
         }
         else if (button == 3) {
             localStorage.removeItem('save1');
+            openDataScreen();
         }
         else if (button == q) {
             saveObject = { player, scene };
             localStorage.setItem('save2', JSON.stringify(saveObject));
+            openDataScreen();
         }
         else if (button == w) {
             saveObject = JSON.parse(localStorage.getItem('save2'));
             console.log(saveObject);
             scene = saveObject.scene;
             player = saveObject.player;
+            dataScreen = false;
             setScene();
         }
         else if (button == e) {
             localStorage.removeItem('save2');
+            openDataScreen();
         }
         else if (button == a) {
             saveObject = { player, scene };
             localStorage.setItem('save3', JSON.stringify(saveObject));
+            openDataScreen();
         }
         else if (button == s) {
             saveObject = JSON.parse(localStorage.getItem('save3'));
             console.log(saveObject);
             scene = saveObject.scene;
             player = saveObject.player;
+            dataScreen = false;
             setScene();
         }
         else if (button == d) {
             localStorage.removeItem('save3');
+            openDataScreen();
         }
         else if (button == z) {
             saveObject = { player, scene };
             localStorage.setItem('save4', JSON.stringify(saveObject));
+            openDataScreen();
         }
         else if (button == x) {
             saveObject = JSON.parse(localStorage.getItem('save4'));
             console.log(saveObject);
             scene = saveObject.scene;
             player = saveObject.player;
+            dataScreen = false;
             setScene();
         }
         else if (button == c) {
             localStorage.removeItem('save4');
+            openDataScreen();
         }
     }
 
@@ -768,23 +781,19 @@ function setScene() {
 
 function openDataScreen() {
     clearAll();
-
-    if ("Save1" in localStorage) {
+    if (JSON.parse(localStorage.getItem('save1')) != null) {
         button2.disabled = false;
         button3.disabled = false;
     }
-    if ("Save2" in localStorage) {
-        dataTest = localStorage.getItem("Save2");
+    if (JSON.parse(localStorage.getItem('save2')) != null) {
         buttonW.disabled = false;
         buttonE.disabled = false;
     }
-    if ("Save3" in localStorage) {
-        dataTest = localStorage.getItem("Save3");
+    if (JSON.parse(localStorage.getItem('save3')) != null) {
         buttonS.disabled = false;
         buttonD.disabled = false;
     }
-    if ("Save4" in localStorage) {
-        dataTest = localStorage.getItem("Save4");
+    if (JSON.parse(localStorage.getItem('save4')) != null) {
         buttonX.disabled = false;
         buttonC.disabled = false;
     }
@@ -810,7 +819,6 @@ function openDataScreen() {
     buttonC.innerHTML = "Delete 4";
     buttonB.innerHTML = "Back";
     buttonB.disabled = false;
-
 }
 
 function activeStatsCalc() {

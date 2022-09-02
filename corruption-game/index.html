@@ -21,7 +21,7 @@
                 <div id="content" color: white;"></div>
             </div>
             <!--Under Content-->
-            <div style="display: flex; flex: 1; background-color: #252526; box-shadow: 0 0 25px #0003; padding: 5px;">
+            <div style="display: flex; flex: 1; background-color: #252526; box-shadow: 0 0 25px #0003; padding: 2px;">
                 <!--Controls-->
                 <div style="width: 100%; flex: 3; display: flex; flex-direction: column;">
                     <!--Controls Row 1-->
@@ -63,8 +63,15 @@
         <!--Aside-->
         <div style="flex: 1; background-color: #303035; display: flex; flex-direction: column;">
             <div id="info" style="flex: 4;"></div>
-            <div style="flex: 1;">
-                <button onclick="buttonClick(data)" type="button" class="controlButton" id="data">Save</button>
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <div style="flex: 1; display: flex;">
+                </div>
+                <div style="flex: 1; display: flex;">
+                </div>
+                <div style="flex: 1; display: flex;">
+                    <button onclick="buttonClick(restart)" type="button" class="controlButton" id="restart">Restart</button>
+                    <button onclick="buttonClick(data)" type="button" class="controlButton" id="data">Save</button>
+                </div>
             </div>
         </div>
     </div>
