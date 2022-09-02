@@ -1,180 +1,108 @@
-h1{
+h1 {
+	font-size: 200px;
+	font-family: Open Sans;
+	color: black;
+	margin: auto;
+}
+
+h3 {
+	font-size: 100px;
+	font-family: Open Sans;
+	color: black;
+	margin: auto;
+}
+
+h6 {
+	font-size: 16px;
+	font-family: Open Sans;
+	color: white;
+	margin: auto;
+	position: relative;
+	font-weight: 100;
+}
+
+p {
+	font-family: Roboto;
+}
+
+header {
+	background-color: black;
+	width: 100%;
+	height: 60px;
+	display: flex;
 	text-align: center;
-	font-family: Roboto Condensed;
-	font-size: 40px;
+	position: fixed;
+}
+
+body {
 	margin: 0;
-	padding: 50px 0 0 0;
 }
 
-h2,h3,h4,h5{
-	text-align: center;
-	font-family: Roboto Condensed;
+section {
+	display: flex;
 }
 
-p{
-	margin: 5px 0;
-	text-align: left;
-}
-
-body{
-	font-family: Roboto Condensed;
-	color: #fff;
-	overflow: hidden;
-}
-
-.banner{
-	background-image: url("images/Banner.jpg");
-	background-position: center;
-	background-size: cover;
+article {
 	display: block;
-	min-height: 100vh;
+	flex: 2;
+	background-color: #ffffff;
+	padding: 50px;
 }
 
-@media screen and (min-width: 800px) {
-	
-	h1{
-		text-align: center;
-		font-family: Roboto Condensed;
-		font-size: 75px;
-		padding: 50px;
-		margin: 0;
-		padding: 50px 0 0 0;
-	}
-	
-	.mainTitle{
-		font-family: East Sea Dokdo;
-		font-size: 128px;
-		text-align: center;
-		color: #fff;
-		text-shadow: 0 0 16px #0006;
-		margin: 0 50px 0 50px;
-	}
-	
-	.button {
-		width: 256px;
-		height: 64px;
-		font-size: 32px;
-		color: #fff;
-		background-color: #0000;
-		border: 2px solid #fff;
-		border-radius: 6px;
-		margin: 10px;
-		box-shadow: 0 0 16px #0006;
-		text-shadow: 0 0 16px #0006;
-		transition: 0.25s;
-	}
-
-	.container{
-		max-width: 800px;
-		display: block;
-		align-items: center;
-		margin: auto;
-		padding: 10px 0 10px 0;
-		background-color: #0000;
-	}
-
-	.titleContainer{
-		max-width: 800px;
-		display: block;
-		align-items: center;
-		background-image: url("images/ContainerIdle.png");
-		background-size: cover;
-		background-color: #0002;
-		margin: auto;
-		padding: 0 0 50px 0;
-		transition: .5s;
-	}
-
-	.titleContainer:hover{
-		background-color: #000f;
-		background-image: url("images/Container.png");
-	}
-
-	.tosContainer{
-		max-width: 800px;
-		display: block;
-		align-items: left;
-		background-color: #fff;
-		color: #000;
-		margin: auto;
-		padding: 20px;
-		line
-	}
-
-	.button:hover {
-		background-color: #fff2;
-		cursor: pointer;
-	}
-	
-	.logoButton{
-		margin: auto 40px;
-		vertical-align: centered;
-	}
+aside {
+	display: block;
+	flex: 1;
+	background-color: #eeeeee;
+	padding: 50px;
 }
 
-@media screen and (max-width: 800px) {
-	.mainTitle{
-		font-family: East Sea Dokdo;
-		font-size: 64px;
-		text-align: center;
-		color: #fff;
-		text-shadow: 0 0 16px #0006;
-		margin: 0 50px;
-	}
-	.titleContainer{
-		max-width: 400px;
-		display: inline;
-		align-items: center;
-		background-size: cover;
-		background-color: #0006;
-		margin: auto;
-		padding: 0 0 50px 0;
-		transition: .5s;
-		}
+a {
+	text-decoration: none;
+}
 
-	.tosContainer{
-		max-width: 500px;
-		display: block;
-		align-items: left;
-		background-color: #fff;
-		color: #000;
-		margin: auto;
-		padding: 20px;
-	}
-	
-	.container{
-		max-width: 800px;
-		display: block;
-		align-items: center;
-		margin: auto;
-		padding: 10px 0 10px 0;
-		background-color: #0000;
-	}
-		
-	.button {
-		width: 128px;
-		height: 32px;
-		font-size: 16px;
-		color: #fff;
-		background-color: #0000;
-		border: 1px solid #fff;
-		border-radius: 3px;
-		margin: 5px;
-		box-shadow: 0 0 8px #0006;
-		text-shadow: 0 0 8px #0006;
-		transition: 0.25s;
-	}
-	
-	.logoButton{
-		margin: auto 10px;
-		vertical-align: centered;
-	}
+.container{
+	max-width: 800px;
+	display: block;
+	align-items: center;
+	margin: auto;
+	padding: 10px 0 10px 0;
+	background-color: #0000;
+}
+
+.titleContainer{
+	max-width: 650px;
+	display: block;
+	align-items: center;
+	text-align: center;
+	vertical-align: middle;
+	background-image: url("images/ContainerIdle.png");
+	background-size: cover;
+	background-position: center;
+	background-color: #0002;
+	margin: auto;
+	padding: 0 0 70px 0;
+	transition: .5s;
+}
+
+.titleContainer:hover{
+	background-color: #000f;
+	background-image: url("images/Container.png");
+}
+
+.mainTitle{
+	font-family: East Sea Dokdo;
+	font-size: 128px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 0 16px #0006;
+	margin: 0 50px 0 50px;
 }
 
 .avatar{
 	height: 100px;
 	width: 100px;
-	margin: 0 0 36px 0;
+	margin: auto;
 	border: 3px solid #fff;
 	border-radius: 50%;
+	vertical-align: middle;
 }

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Corruption Game</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <script src="./script.js"></script>
+</head>
+<body onload="onLoad()">
+    <!--Header-->
+    <div style="flex: 0; background-color: #000;"></div>
+
+    <!--Body-->
+    <div style="flex: 30; display: flex; flex-direction: row-reverse;">
+        <!--Main-->
+        <div style="height: 100%; flex: 4; display: flex; flex-direction: column;">
+            <!--Content-->
+            <div class="contentContainer">
+                <div id="content" color: white;"></div>
+            </div>
+            <!--Under Content-->
+            <div style="display: flex; flex: 1; background-color: #252526; box-shadow: 0 0 25px #0003; padding: 5px;">
+                <!--Controls-->
+                <div style="width: 100%; flex: 3; display: flex; flex-direction: column;">
+                    <!--Controls Row 1-->
+                    <div class="controlRow">
+                        <button onclick="buttonClick(1)" type="button" class="controlButton" id="1">text</button>
+                        <button onclick="buttonClick(2)" type="button" class="controlButton" id="2">text</button>
+                        <button onclick="buttonClick(3)" type="button" class="controlButton" id="3">text</button>
+                        <button onclick="buttonClick(4)" type="button" class="controlButton" id="4">text</button>
+                        <button onclick="buttonClick(5)" type="button" class="controlButton" id="5">text</button>
+                    </div>
+                    <!--Controls Row 2-->
+                    <div class="controlRow">
+                        <button onclick="buttonClick(q)" type="button" class="controlButton" id="q">text</button>
+                        <button onclick="buttonClick(w)" type="button" class="controlButton" id="w">text</button>
+                        <button onclick="buttonClick(e)" type="button" class="controlButton" id="e">text</button>
+                        <button onclick="buttonClick(r)" type="button" class="controlButton" id="r">text</button>
+                        <button onclick="buttonClick(t)" type="button" class="controlButton" id="t">text</button>
+                    </div>
+                    <!--Controls Row 3-->
+                    <div class="controlRow">
+                        <button onclick="buttonClick(a)" type="button" class="controlButton" id="a">text</button>
+                        <button onclick="buttonClick(s)" type="button" class="controlButton" id="s">text</button>
+                        <button onclick="buttonClick(d)" type="button" class="controlButton" id="d">text</button>
+                        <button onclick="buttonClick(f)" type="button" class="controlButton" id="f">text</button>
+                        <button onclick="buttonClick(g)" type="button" class="controlButton" id="g">text</button>
+                    </div>
+                    <!--Controls Row 4-->
+                    <div class="controlRow">
+                        <button onclick="buttonClick(z)" type="button" class="controlButton" id="z">text</button>
+                        <button onclick="buttonClick(x)" type="button" class="controlButton" id="x">text</button>
+                        <button onclick="buttonClick(c)" type="button" class="controlButton" id="c">text</button>
+                        <button onclick="buttonClick(v)" type="button" class="controlButton" id="v">text</button>
+                        <button onclick="buttonClick(b)" type="button" class="controlButton" id="b">text</button>
+                    </div>
+                </div>
+                <div style="flex: 0;"></div>
+            </div>
+        </div>
+        <!--Aside-->
+        <div style="flex: 1; background-color: #303035;"></div>
+    </div>
+
+    <!--Footer-->
+    <div style="flex: 0; background-color: #000;"></div>
+</body>
+</html>
