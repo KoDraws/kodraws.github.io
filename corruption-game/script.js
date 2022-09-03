@@ -574,8 +574,8 @@ function buttonClick(button) {
     else if (scene == "beginning") {
         if (button == 1) {
             activeStats.lust /= 2;
-            player.location = (null, 0, 0);
-            scene = 
+            player.location = ("intro", 0, 0);
+            scene = "beginning";
         }
     }
 }
