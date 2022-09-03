@@ -822,6 +822,7 @@ function setScene() {
             infoPopulate();
             content.innerHTML += "<p style=\"color: red;\">INCOMPLETE</p>";
             content.innerHTML += "<p>Choose between purity and corruption.</p>";
+            content.innerHTML += "<p>(This is the extent of the game so far)</p>";
             button1.innerHTML = "Purity";
             button1.disabled = false;
             button2.innerHTML = "Corruption";
