@@ -93,7 +93,7 @@ function buttonClick(button) {
         dataScreen = true;
         openDataScreen();
     }
-    else if (dataScreen) {
+    else if (dataScreen && button != restart) {
         if (button == data) {
             dataScreen = false;
             setScene();
