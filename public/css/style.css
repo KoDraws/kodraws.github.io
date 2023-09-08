@@ -20,6 +20,7 @@ body {
     background-image: url('/images/background-pattern.png');
     background-blend-mode: multiply;
     background-size: 32px;
+    background-position: center;
 }
 
 /* Style headers (h1, h2, h3, etc.) */
@@ -31,7 +32,7 @@ h1 {
 
 h2 {
     font-size: 36px;
-    font-weight: bold;
+    font-weight: 300;
     margin-bottom: 8px;
 }
 
@@ -39,15 +40,13 @@ h3 {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 6px;
+    margin-top: 12px;
 }
 
 .fullscreen-section {
     height: 100vh;
     width: 100vw;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     transition: all 1s ease;
 }
 
@@ -67,13 +66,6 @@ h3 {
     flex: 0;
 }
 
-.socials {
-    background-color: #6668;
-    color: #000;
-    width: 100%;
-    height: 100%;
-}
-
 #intro-h1 {
     opacity: 0;
 }
@@ -82,16 +74,46 @@ h3 {
     opacity: 0;
 }
 
+.about-first {
+    flex: 1;
+    padding: 50px;
+}
+
+.about-second {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-socials {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-directory {
+    flex: 1;
+    padding: 50px;
+}
+
+.link-icons {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    transition: all 0.5s ease;
+}
+
 /* Mobile Formatting */
 @media (max-aspect-ratio: 1/1) {
-    h1 {
+    #intro-h1 {
         font-size: 20vh;
         width: 50%;
         min-width: 25vh;
         line-height: 1.2;
     }
 
-    p {
+    #intro-p {
         font-size: 20px;
     }
 
@@ -99,9 +121,13 @@ h3 {
         margin: 0;
     }
 
+    .fullscreen-section {
+        flex-direction: column;
+    }
+
     .intro {
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
     }  
@@ -123,8 +149,8 @@ h3 {
         width: 100%;
     }
 
-    .socials {
-        flex-direction: column;
+    .about-second {
+
     }
 
     .desktop-only {
@@ -134,23 +160,27 @@ h3 {
 
 /* Desktop Formatting */
 @media (min-aspect-ratio: 1/1) {
-    h1 {
-        font-size: 25vh;
+    #intro-h1 {
+        font-size: 18vh;
         line-height: 1;
         text-align: center;
     }
 
-    p {
-        font-size: 3vh;
+    #intro-p {
+        font-size: 2.2vh;
         text-align: left;
     }
 
+    .fullscreen-section {
+        flex-direction: row;
+    }
+
     .intro {
-        height: 80%;
+        height: 80vh;
         width: 80%;
         display: flex;
         flex-direction: row;
-        margin: 10% 10%;
+        margin: 10vh 10%;
         box-shadow: 0 0 32px 8px #0008;
         border-radius: 10vh;
     }  
@@ -166,20 +196,22 @@ h3 {
         border-radius: 10vh;
     }
 
+    #intro-logo {
+        width: 40%;
+        height: auto;
+        margin: 10% 0 0 0;
+        border-radius: 50%;
+        transition: all 5s ease;
+        opacity: 0;
+    }
+
     .intro-second {
-        background-image: url('/art/beach_party.jpg');
+        background-image: url('/art/beach-party.jpg');
         background-position: center;
         background-size: cover;
         border-radius: 10vh;
         box-shadow: 0 0 32px 8px #0009 inset;
         height: 100%;
-    }
-
-    .intro-logo {
-        width: 25%;
-        height: auto;
-        margin: 0 0 5% 0;
-        border-radius: 50%;
     }
 
     .socials {

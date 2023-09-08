@@ -12,6 +12,9 @@ function introAnimation() {
     introP.style.opacity = '0';
     introP.style.transition = 'all 5s ease';
     introP.style.opacity = '1';
+
+    var introLogo = document.getElementById('intro-logo');
+    introLogo.style.opacity = '1';
     
     var introSecond = document.getElementById('intro-second');
     introSecond.style.flex = '3';
