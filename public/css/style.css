@@ -1,0 +1,192 @@
+/* Reset some default styles to ensure consistent rendering */
+html, body, div, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype-variations');
+}
+
+/* Set a default font and background color */
+body {
+    font-family: Inter;
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+    background-image: url('/images/background-pattern.png');
+    background-blend-mode: multiply;
+    background-size: 32px;
+}
+
+/* Style headers (h1, h2, h3, etc.) */
+h1 {
+    font-size: 144px;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.fullscreen-section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease;
+}
+
+.centered {
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+.intro {
+    background-color: #040404;
+}
+
+.intro-second {
+    transition: flex 5s ease;
+    transition-delay: 2s;
+    flex: 0;
+}
+
+.socials {
+    background-color: #6668;
+    color: #000;
+    width: 100%;
+    height: 100%;
+}
+
+#intro-h1 {
+    opacity: 0;
+}
+
+#intro-p {
+    opacity: 0;
+}
+
+/* Mobile Formatting */
+@media (max-aspect-ratio: 1/1) {
+    h1 {
+        font-size: 20vh;
+        width: 50%;
+        min-width: 25vh;
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    hr {
+        margin: 0;
+    }
+
+    .intro {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }  
+
+    .intro-first {
+        flex: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .intro-second {
+        background-image: url('/images/logo.jpg');
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0 16px 32px 0 #0009 inset;
+        width: 100%;
+    }
+
+    .socials {
+        flex-direction: column;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+}
+
+/* Desktop Formatting */
+@media (min-aspect-ratio: 1/1) {
+    h1 {
+        font-size: 25vh;
+        line-height: 1;
+        text-align: center;
+    }
+
+    p {
+        font-size: 3vh;
+        text-align: left;
+    }
+
+    .intro {
+        height: 80%;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        margin: 10% 10%;
+        box-shadow: 0 0 32px 8px #0008;
+        border-radius: 10vh;
+    }  
+
+    .intro-first {
+        flex: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        min-width: 30vh;
+        border-radius: 10vh;
+    }
+
+    .intro-second {
+        background-image: url('/art/beach_party.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 10vh;
+        box-shadow: 0 0 32px 8px #0009 inset;
+        height: 100%;
+    }
+
+    .intro-logo {
+        width: 25%;
+        height: auto;
+        margin: 0 0 5% 0;
+        border-radius: 50%;
+    }
+
+    .socials {
+        flex-direction: row;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+}
