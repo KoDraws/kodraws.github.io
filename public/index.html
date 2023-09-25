@@ -62,20 +62,20 @@
     </div>
   </section>
   <footer>
-    <div>
-      <p>
+    <div style="padding: 30px; display: flex;">
+      <p style="margin: auto; font-weight: 100;">
         © 2023 KoDraws.Art
       </p>
     </div>
   </footer>
 </body>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  window.onload = function () {
       var grid = document.querySelector('.grid');
       var masonry = new Masonry(grid, {
           itemSelector: '.grid-item',
           fitWidth: true
       });
-  });
+  };
 </script>
 </html>
