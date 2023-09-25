@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'East Sea Dokdo';
+    src: url(./fonts/EastSeaDokdo-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url(./fonts/Inter-VariableFont_slnt\,wght.ttf) format('truetype');
+}
+
+body, h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #141414;
+    font-family: Arial, sans-serif;
+    max-width: 2000px;
+    margin: auto;
+    box-shadow: 0 0 60px 0 #0008;
+    background-image: url('./images/background-pattern.png');
+    background-position: center;
+    background-size: 12px;
+    background-blend-mode: multiply;
+}
+
+h1 {
+    font-family: 'East Sea Dokdo', Arial, sans-serif;
+    font-size: 16em;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+}
+
+h2 {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 8em;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 4em;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+p {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 1em;
+    color: #fff;
+    text-align: left;
+}
+
+.intro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-image: url('./gallery/beach-party.jpg');
+    background-position: center;
+    background-size: cover;
+
+    backdrop {
+        display: flex;
+        background-color: #0008;
+        backdrop-filter: blur(20px);
+        flex: auto;
+        width: 100%;
+        background-image: url('./images/background-pattern.png');
+        background-position: center;
+        background-size: 16px;
+        background-blend-mode: multiply;
+    }
+
+    container {
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    img {
+        height: 200px;
+        width: 200px;
+        border-radius: 10%;
+        margin: 50px auto;
+    }
+}
+
+.social-bar {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    background-color: #0d0d0d;
+
+    img {
+        height: 60px;
+        width: 60px;
+    }
+
+    a {
+        margin: 30px 50px;
+    }
+
+    .color-correct {
+        filter: brightness(0) invert(1);
+    }
+
+    container {
+        margin: auto;
+        flex-direction: row;
+        display: flex;
+
+        @media screen and (max-width: 1200px) {
+            flex-direction: column;
+        }
+
+        @media screen and (max-width: 600px) {
+            flex-direction: row;
+        }
+
+        @media screen and (max-width: 400px) {
+            flex-direction: column;
+        }
+
+        subcontainer {
+            display: flex;
+            flex-direction: row;
+
+            @media screen and (max-width: 600px) {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #0d0d0d;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    background-color: #080808;
+    padding-top: 50px;
+}
+
+.grid {
+    width: 100%;
+}
+
+.grid-item {
+    width: 600px;
+    max-width: 100%;
+    margin: 5px;
+}
+
+.grid-sizer {
+    width: 100%;
+}

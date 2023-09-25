@@ -1,0 +1,38 @@
+# Node.js and Express.js .gitignore
+
+# Dependencies
+node_modules/
+
+# Environment variables (if you use .env files for configuration)
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# Build and runtime directories
+dist/
+build/
+out/
+tmp/
+temp/
+
+# Editor/IDE specific files and directories
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+.DS_Store
+
+# OS-specific files
+Thumbs.db
+Desktop.ini
+
+# Miscellaneous
+npm-debug.log*
+yarn-error.log*
+package-lock.json

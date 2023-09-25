@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <link rel='stylesheet' href='./assets/style.css'>
+  <script src="./assets/script.js"></script>
+  <title>KoDraws.Art</title>
+</head>
+<body>
+  <!--INTRO-->
+  <section class="intro ">
+    <div class="header" style="flex: auto; display: flex; flex-direction: column;">
+      <backdrop>
+          <container style="margin: auto;">
+            <h1>Ko</h1>
+            <img src="./assets/images/logo.jpg" alt="logo">
+          </container>
+      </backdrop>
+    </div>
+    <div class="social-bar">
+      <container>
+        <subcontainer>
+          <a href="https://twitter.com/KoDrawsStuff" target="_blank"><img src="./assets/images/x.svg" alt="x" style="height: 50px; width: 50px; margin: 5px;"></a>
+          <a href="https://www.furaffinity.net/user/kodraws" target="_blank"><img src="./assets/images/furaffinity.svg" alt="furaffinity" class="color-correct"></a>
+          <a href="https://bsky.app/profile/kodraws.art" target="_blank"><img src="./assets/images/bluesky.png" alt="bluesky" style="border-radius: 20%;"></a>
+        </subcontainer>
+        <subcontainer>
+          <a href="https://discord.gg/DjmXB9ZmJf" target="_blank"><img src="./assets/images/discord.svg" alt="discord"></a>
+          <a href="https://t.me/kodrawsstuff" target="_blank"><img src="./assets/images/telegram.svg" alt="telegram" class="color-correct"></a>
+          <a href="https://meow.social/@ko" target="_blank"><img src="./assets/images/mastodon.svg" alt="mastodon" style="height: 55px; width: 55px; margin: 2.5px;"></a>
+        </subcontainer>
+      </container>
+    </div>
+  </section>
+  <!--GALLERY-->
+  <section class="gallery">
+    <div class="grid" data-masonry='{"itemSelector": ".grid-item", "fitWidth": "true"}'>
+      <img class="grid-item" src="./assets/gallery/aliradan.jpg" alt="aliradan">
+      <img class="grid-item" src="./assets/gallery/glare.jpg" alt="glare">
+      <img class="grid-item" src="./assets/gallery/beach-party.jpg" alt="beach-party">
+      <img class="grid-item" src="./assets/gallery/creature-sketch.jpg" alt="creature-sketch">
+      <img class="grid-item" src="./assets/gallery/day-at-the-range.jpg" alt="day-at-the-range">
+      <img class="grid-item" src="./assets/gallery/demon.jpg" alt="demon">
+      <img class="grid-item" src="./assets/gallery/snake-01.jpg" alt="snake-01">
+      <img class="grid-item" src="./assets/gallery/dobe.jpg" alt="dobe">
+      <img class="grid-item" src="./assets/gallery/dogs-got-a-bone.png" alt="dogs-got-a-bone">
+      <img class="grid-item" src="./assets/gallery/evening-nap.jpg" alt="evening-nap">
+      <img class="grid-item" src="./assets/gallery/helping-hands.jpg" alt="helping-hands">
+      <img class="grid-item" src="./assets/gallery/snake-02.jpg" alt="snake-02">
+      <img class="grid-item" src="./assets/gallery/hot-spring.jpg" alt="hot-spring">
+      <img class="grid-item" src="./assets/gallery/hung-derg.png" alt="hung-derg">
+      <img class="grid-item" src="./assets/gallery/junio-and-hiro.png" alt="junio-and-hiro">
+      <img class="grid-item" src="./assets/gallery/devious.jpg" alt="devious">
+      <img class="grid-item" src="./assets/gallery/mordak-commission.png" alt="mordak-commission">
+      <img class="grid-item" src="./assets/gallery/narnia.jpg" alt="narnia">
+      <img class="grid-item" src="./assets/gallery/shooks.jpg" alt="shooks">
+      <img class="grid-item" src="./assets/gallery/skull-beast.jpg" alt="skull-beast">
+      <img class="grid-item" src="./assets/gallery/slate.jpg" alt="slate">
+      <img class="grid-item" src="./assets/gallery/snake-04.jpg" alt="snake-04">
+    </div>
+  </section>
+  <footer>
+    <div>
+      <p>
+        © 2023 KoDraws.Art
+      </p>
+    </div>
+  </footer>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      var grid = document.querySelector('.grid');
+      var masonry = new Masonry(grid, {
+          itemSelector: '.grid-item',
+          fitWidth: true
+      });
+  });
+</script>
+</html>
